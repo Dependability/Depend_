@@ -1,0 +1,53 @@
+randomvar = "Pounds"
+
+
+def check():
+    system = input("Do you want to use 'Grams' or 'Pounds'")
+    if system == "Pounds":
+        randomvar = "Pounds"
+    elif system == "Grams":
+        randomvar = "Grams"
+    else:
+        print("Please put 'Grams' or 'Pounds'")
+        check()
+
+
+check()
+quarter_weight = float(input("What is the weight of your quarters"))
+dime_weight = float(input("What is the weight of your dimes"))
+penny_weight = float(input("What is the weight of your pennies"))
+nickel_weight = float(input("What is the weight of your nickels"))
+
+
+def wrappers():
+    if randomvar == "Grams":
+        quarters = int(quarter_weight / 5.670)
+        quarter_wraps = int(quarters / 40)
+        print("You have", quarters, "quarters and you need", quarter_wraps, "wrappers")
+        dimes = int(dime_weight / 2.268)
+        dime_wraps = int(dimes / 50)
+        print("You have", dimes, "dimes and you need", dime_wraps, "wrappers")
+        pennies = int(penny_weight / 2.500)
+        penny_wraps = int(pennies / 50)
+        print("You have", pennies, "pennies and you need", penny_wraps, "wrappers")
+        nickels = int(nickel_weight / 5.000)
+        nickel_wraps = int(nickels / 40)
+        print("You have", nickels, "nickels and you need", nickel_wraps, "wrappers")
+        print("The total sum of your money is", ((nickels * .05) + (dimes * .1) + (pennies * .01) + (quarters * .25)))
+    elif randomvar == "Pounds":
+        quarters = int(quarter_weight / 0.01250021)
+        quarter_wraps = int(quarters / 40)
+        print("You have", quarters, "quarters and you need", quarter_wraps, "wrappers")
+        dimes = int(dime_weight / 0.0050000841)
+        dime_wraps = int(dimes / 50)
+        print("You have", dimes, "quarters and you need", dime_wraps, "wrappers")
+        pennies = int(penny_weight / 0.00551156)
+        penny_wraps = int(pennies / 50)
+        print("You have", pennies, "quarters and you need", penny_wraps, "wrappers")
+        nickels = int(nickel_weight / 0.0110232)
+        nickel_wraps = int(nickels / 40)
+        print("You have", nickels, "quarters and you need", nickel_wraps, "wrappers")
+        print("The total sum of your money is", ((nickels * .05) + (dimes * .1) + (pennies * .01) + (quarters * .25)))
+
+
+wrappers()
